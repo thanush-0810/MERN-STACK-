@@ -1,0 +1,1068 @@
+.navbar {
+    background: linear-gradient(90deg, #1e3c72 0%, #4dabf7 100%) !important;
+    padding: 35px 70px !important;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding: 0 30px;
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img {
+    height: 55px;
+    width: auto;
+    margin-right: 35px;  /* Increased spacing between logo and text */
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.brand-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;  /* Additional left margin for text */
+}
+
+/* Update the nav-item and nav-link styles */
+.nav-item {
+    margin: 0 15px;
+    font-weight: 600;
+    perspective: 1000px;
+}
+
+/* Add these keyframes for glitch effect */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        text-shadow: none;
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        text-shadow: 2px 0 #ff00ea, -2px 0 #00ff9d;
+    }
+    40% {
+        transform: translate(-2px, -2px);
+        text-shadow: 4px 0 #ff00ea, -4px 0 #00ff9d;
+    }
+    60% {
+        transform: translate(2px, 2px);
+        text-shadow: 2px 0 #ff00ea, -2px 0 #00ff9d;
+    }
+    80% {
+        transform: translate(2px, -2px);
+        text-shadow: none;
+    }
+    100% {
+        transform: translate(0);
+        text-shadow: none;
+    }
+}
+
+/* Update nav-link styles */
+.nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+    padding: 20px 35px !important;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateZ(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: inherit;
+}
+
+.nav-link:hover {
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
+                inset 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite reverse;
+}
+
+.nav-link:hover i {
+    animation: glitch 0.2s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.2);
+    animation: glitch 0.2s cubic-bezier(.25, .46, .45, .94) both;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Update media queries for mobile */
+@media (max-width: 991px) {
+    .nav-link:hover {
+        animation: glitch 0.2s cubic-bezier(.25, .46, .45, .94) both;
+    }
+    
+    .nav-link:hover::after {
+        animation: glitch 0.2s cubic-bezier(.25, .46, .45, .94) both reverse;
+    }
+}
+
+.container {
+    max-width: 1600px;
+    padding: 0 50px;
+}
+
+@media (max-width: 991px) {
+    .nav-item {
+        margin: 12px 0;
+    }
+    
+    .navbar-nav {
+        padding: 25px 0;
+    }
+    
+    .nav-link {
+        font-size: 1.25rem;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.8rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Add liquid effect keyframes */
+@keyframes wave {
+    0% { transform: translateX(-100%) }
+    50% { transform: translateX(0) }
+    100% { transform: translateX(100%) }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+/* Update Grievance button styles */
+a[href="/grievance"].nav-link {
+    position: relative;
+    padding: 15px 25px;
+    color: #03e9f4 !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    overflow: hidden;
+    background: transparent;
+    transition: 0.5s;
+    border: none;
+    font-family: "Raleway", sans-serif;
+}
+
+a[href="/grievance"].nav-link:hover {
+    background: #03e9f4;
+    color: #050801 !important;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+    animation: none;
+}
+
+a[href="/grievance"].nav-link span {
+    position: absolute;
+    display: block;
+}
+
+a[href="/grievance"].nav-link span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: neonAnimate1 1s linear infinite;
+}
+
+a[href="/grievance"].nav-link span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: neonAnimate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+a[href="/grievance"].nav-link span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: neonAnimate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+a[href="/grievance"].nav-link span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: neonAnimate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes neonAnimate1 {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+@keyframes neonAnimate2 {
+    0% { top: -100%; }
+    50%, 100% { top: 100%; }
+}
+
+@keyframes neonAnimate3 {
+    0% { right: -100%; }
+    50%, 100% { right: 100%; }
+}
+
+@keyframes neonAnimate4 {
+    0% { bottom: -100%; }
+    50%, 100% { bottom: 100%; }
+}
+
+/* Remove previous grievance button effects */
+a[href="/grievance"].nav-link::before {
+    display: none;
+}
+
+a[href="/grievance"].nav-link.active {
+    background: rgba(3, 233, 244, 0.2);
+    box-shadow: 0 0 15px rgba(3, 233, 244, 0.5);
+}
+
+/* Add blob effect keyframes */
+@keyframes blob {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+/* Specific styles for Signup button */
+/* Replace the existing signup button styles with new liquid fill effect */
+a[href="/signup"].nav-link {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background: none;
+    border: 2px solid #646cff;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: linear-gradient(#646cff 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, 0.2em);
+    transition: 0.3s var(--t, 0s), background-position 0.3s calc(0.3s - var(--t, 0s));
+}
+
+a[href="/signup"].nav-link:hover {
+    --p: 100%;
+    --t: 0.3s;
+    color: #fff !important;
+    animation: none;
+    transform: none;
+    box-shadow: 0 0 15px rgba(100, 108, 255, 0.3);
+}
+
+/* Remove previous signup button effects */
+a[href="/signup"].nav-link::before,
+a[href="/signup"].nav-link::after {
+    display: none;
+}
+
+a[href="/signup"].nav-link i {
+    transition: transform 0.3s ease;
+}
+
+a[href="/signup"].nav-link:hover i {
+    transform: translateX(5px);
+    animation: none;
+}
+
+a[href="/signup"].nav-link.active {
+    background: rgba(100, 108, 255, 0.2);
+    border-color: #646cff;
+}
+
+/* Add new login button animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateX(0%); }
+    15% { transform: translateX(-25%) rotate(-5deg); }
+    30% { transform: translateX(20%) rotate(3deg); }
+    45% { transform: translateX(-15%) rotate(-3deg); }
+    60% { transform: translateX(10%) rotate(2deg); }
+    75% { transform: translateX(-5%) rotate(-1deg); }
+}
+
+@keyframes rotate3d {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(180deg); }
+    100% { transform: rotateX(360deg); }
+}
+
+/* Login button styles */
+a[href="/login"].nav-link {
+    background-color: #3498db;
+    color: white !important;
+    padding: 10px 25px !important;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    perspective: 300px;
+    transform-style: preserve-3d;
+}
+
+a[href="/login"].nav-link:hover {
+    animation: pulse 1.5s infinite, wobble 0.8s;
+    background-color: #2980b9;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+}
+
+a[href="/login"].nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+a[href="/login"].nav-link:hover::after {
+    width: 100%;
+}
+
+a[href="/login"].nav-link i {
+    transition: transform 0.3s ease;
+}
+
+a[href="/login"].nav-link:hover i {
+    animation: none;
+    transform: translateX(5px);
+}
+
+a[href="/login"].nav-link.active {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Remove conflicting styles */
+a[href="/login"].nav-link::before {
+    display: none;
+}
+
+/* Update About button styles to match Grievance */
+a[href="/about"].nav-link {
+    position: relative;
+    padding: 15px 25px;
+    color: #03e9f4 !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    overflow: hidden;
+    background: transparent;
+    transition: 0.5s;
+    border: none;
+    font-family: "Raleway", sans-serif;
+}
+
+a[href="/about"].nav-link:hover {
+    background: #03e9f4;
+    color: #050801 !important;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+    animation: none;
+}
+
+a[href="/about"].nav-link span {
+    position: absolute;
+    display: block;
+}
+
+/* Update Login button styles to match Grievance */
+a[href="/login"].nav-link {
+    position: relative;
+    padding: 15px 25px;
+    color: #03e9f4 !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    overflow: hidden;
+    background: transparent;
+    transition: 0.5s;
+    border: none;
+    font-family: "Raleway", sans-serif;
+}
+
+a[href="/login"].nav-link:hover {
+    background: #03e9f4;
+    color: #050801 !important;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+    animation: none;
+}
+
+a[href="/login"].nav-link span {
+    position: absolute;
+    display: block;
+}
+
+a[href="/grievance"].nav-link span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: neonAnimate1 1s linear infinite;
+}
+
+a[href="/grievance"].nav-link span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: neonAnimate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+a[href="/grievance"].nav-link span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: neonAnimate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+a[href="/grievance"].nav-link span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: neonAnimate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes neonAnimate1 {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+@keyframes neonAnimate2 {
+    0% { top: -100%; }
+    50%, 100% { top: 100%; }
+}
+
+@keyframes neonAnimate3 {
+    0% { right: -100%; }
+    50%, 100% { right: 100%; }
+}
+
+@keyframes neonAnimate4 {
+    0% { bottom: -100%; }
+    50%, 100% { bottom: 100%; }
+}
+
+/* Remove previous grievance button effects */
+a[href="/grievance"].nav-link::before {
+    display: none;
+}
+
+a[href="/grievance"].nav-link.active {
+    background: rgba(3, 233, 244, 0.2);
+    box-shadow: 0 0 15px rgba(3, 233, 244, 0.5);
+}
+
+/* Add blob effect keyframes */
+@keyframes blob {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+/* Specific styles for Signup button */
+/* Replace the existing signup button styles with new liquid fill effect */
+a[href="/signup"].nav-link {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background: none;
+    border: 2px solid #646cff;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: linear-gradient(#646cff 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, 0.2em);
+    transition: 0.3s var(--t, 0s), background-position 0.3s calc(0.3s - var(--t, 0s));
+}
+
+a[href="/signup"].nav-link:hover {
+    --p: 100%;
+    --t: 0.3s;
+    color: #fff !important;
+    animation: none;
+    transform: none;
+    box-shadow: 0 0 15px rgba(100, 108, 255, 0.3);
+}
+
+/* Remove previous signup button effects */
+a[href="/signup"].nav-link::before,
+a[href="/signup"].nav-link::after {
+    display: none;
+}
+
+a[href="/signup"].nav-link i {
+    transition: transform 0.3s ease;
+}
+
+a[href="/signup"].nav-link:hover i {
+    transform: translateX(5px);
+    animation: none;
+}
+
+a[href="/signup"].nav-link.active {
+    background: rgba(100, 108, 255, 0.2);
+    border-color: #646cff;
+}
+
+/* Add new login button animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateX(0%); }
+    15% { transform: translateX(-25%) rotate(-5deg); }
+    30% { transform: translateX(20%) rotate(3deg); }
+    45% { transform: translateX(-15%) rotate(-3deg); }
+    60% { transform: translateX(10%) rotate(2deg); }
+    75% { transform: translateX(-5%) rotate(-1deg); }
+}
+
+@keyframes rotate3d {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(180deg); }
+    100% { transform: rotateX(360deg); }
+}
+
+/* Login button styles */
+a[href="/login"].nav-link {
+    background-color: #3498db;
+    color: white !important;
+    padding: 10px 25px !important;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    perspective: 300px;
+    transform-style: preserve-3d;
+}
+
+a[href="/login"].nav-link:hover {
+    animation: pulse 1.5s infinite, wobble 0.8s;
+    background-color: #2980b9;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+}
+
+a[href="/login"].nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+a[href="/login"].nav-link:hover::after {
+    width: 100%;
+}
+
+a[href="/login"].nav-link i {
+    transition: transform 0.3s ease;
+}
+
+a[href="/login"].nav-link:hover i {
+    animation: none;
+    transform: translateX(5px);
+}
+
+a[href="/login"].nav-link.active {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Remove conflicting styles */
+a[href="/login"].nav-link::before {
+    display: none;
+}
+
+/* Update About button styles to match Grievance */
+a[href="/about"].nav-link {
+    position: relative;
+    padding: 15px 25px;
+    color: #03e9f4 !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    overflow: hidden;
+    background: transparent;
+    transition: 0.5s;
+    border: none;
+    font-family: "Raleway", sans-serif;
+}
+
+a[href="/about"].nav-link:hover {
+    background: #03e9f4;
+    color: #050801 !important;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+    animation: none;
+}
+
+a[href="/about"].nav-link span {
+    position: absolute;
+    display: block;
+}
+
+/* Update Login button styles to match Grievance */
+a[href="/login"].nav-link {
+    position: relative;
+    padding: 15px 25px;
+    color: #03e9f4 !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    overflow: hidden;
+    background: transparent;
+    transition: 0.5s;
+    border: none;
+    font-family: "Raleway", sans-serif;
+}
+
+a[href="/login"].nav-link:hover {
+    background: #03e9f4;
+    color: #050801 !important;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+    animation: none;
+}
+
+a[href="/login"].nav-link span {
+    position: absolute;
+    display: block;
+}
+
+a[href="/grievance"].nav-link span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: neonAnimate1 1s linear infinite;
+}
+
+a[href="/grievance"].nav-link span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: neonAnimate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+a[href="/grievance"].nav-link span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: neonAnimate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+a[href="/grievance"].nav-link span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: neonAnimate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes neonAnimate1 {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+@keyframes neonAnimate2 {
+    0% { top: -100%; }
+    50%, 100% { top: 100%; }
+}
+
+@keyframes neonAnimate3 {
+    0% { right: -100%; }
+    50%, 100% { right: 100%; }
+}
+
+@keyframes neonAnimate4 {
+    0% { bottom: -100%; }
+    50%, 100% { bottom: 100%; }
+}
+
+/* Remove previous grievance button effects */
+a[href="/grievance"].nav-link::before {
+    display: none;
+}
+
+a[href="/grievance"].nav-link.active {
+    background: rgba(3, 233, 244, 0.2);
+    box-shadow: 0 0 15px rgba(3, 233, 244, 0.5);
+}
+
+/* Add blob effect keyframes */
+@keyframes blob {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+/* Specific styles for Signup button */
+/* Replace the existing signup button styles with new liquid fill effect */
+a[href="/signup"].nav-link {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background: none;
+    border: 2px solid #646cff;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: linear-gradient(#646cff 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, 0.2em);
+    transition: 0.3s var(--t, 0s), background-position 0.3s calc(0.3s - var(--t, 0s));
+}
+
+a[href="/signup"].nav-link:hover {
+    --p: 100%;
+    --t: 0.3s;
+    color: #fff !important;
+    animation: none;
+    transform: none;
+    box-shadow: 0 0 15px rgba(100, 108, 255, 0.3);
+}
+
+/* Remove previous signup button effects */
+a[href="/signup"].nav-link::before,
+a[href="/signup"].nav-link::after {
+    display: none;
+}
+
+a[href="/signup"].nav-link i {
+    transition: transform 0.3s ease;
+}
+
+a[href="/signup"].nav-link:hover i {
+    transform: translateX(5px);
+    animation: none;
+}
+
+a[href="/signup"].nav-link.active {
+    background: rgba(100, 108, 255, 0.2);
+    border-color: #646cff;
+}
+
+/* Add new login button animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateX(0%); }
+    15% { transform: translateX(-25%) rotate(-5deg); }
+    30% { transform: translateX(20%) rotate(3deg); }
+    45% { transform: translateX(-15%) rotate(-3deg); }
+    60% { transform: translateX(10%) rotate(2deg); }
+    75% { transform: translateX(-5%) rotate(-1deg); }
+}
+
+@keyframes rotate3d {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(180deg); }
+    100% { transform: rotateX(360deg); }
+}
+
+/* Login button styles */
+a[href="/login"].nav-link {
+    background-color: #3498db;
+    color: white !important;
+    padding: 10px 25px !important;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    perspective: 300px;
+    transform-style: preserve-3d;
+}
+
+a[href="/login"].nav-link:hover {
+    animation: pulse 1.5s infinite, wobble 0.8s;
+    background-color: #2980b9;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+}
+
+a[href="/login"].nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+a[href="/login"].nav-link:hover::after {
+    width: 100%;
+}
+
+a[href="/login"].nav-link i {
+    transition: transform 0.3s ease;
+}
+
+a[href="/login"].nav-link:hover i {
+    animation: none;
+    transform: translateX(5px);
+}
+
+a[href="/login"].nav-link.active {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Remove conflicting styles */
+a[href="/login"].nav-link::before {
+    display: none;
+}
+
+/* Update About button styles */
+a[href="/about"].nav-link {
+    position: relative;
+    padding: 15px 30px;
+    background: #1a237e;
+    color: white !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
+}
+
+a[href="/about"].nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1a237e, #3949ab);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+a[href="/about"].nav-link::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(57, 73, 171, 0.4) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+a[href="/about"].nav-link:hover {
+    background: #3949ab;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 0 5px #3949ab,
+        0 0 25px #3949ab,
+        0 0 50px #3949ab,
+        0 0 100px #3949ab;
+    animation: none;
+}
+
+a[href="/about"].nav-link.active {
+    background: #283593;
+    box-shadow: 
+        0 0 10px #3949ab,
+        0 0 20px #3949ab,
+        inset 0 0 15px rgba(57, 73, 171, 0.5);
+}
+
+/* Add ping animation for logout button */
+.ping-button {
+    background: #3b82f6 !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.ping-button:hover {
+    background: #2563eb !important;
+    animation: none !important;
+}
+
+.ping-wrapper {
+    position: relative;
+}
+
+.ping-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    background: #3b82f6;
+    opacity: 0.7;
+    z-index: -1;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.ping-button:hover .ping-wrapper::before {
+    animation-duration: 0.75s;
+}
+
+.ping-button.active {
+    background: #1d4ed8 !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Add specific styles for Home button */
+a[href="/"].nav-link {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: color 0.3s ease;
+}
+
+a[href="/"].nav-link:hover {
+    color: white !important;
+    background: transparent !important;
+    animation: none;
+    box-shadow: none;
+    transform: none;
+}
+
+a[href="/"].nav-link::before,
+a[href="/"].nav-link::after {
+    display: none;
+}
+
+a[href="/"].nav-link i {
+    transition: transform 0.3s ease;
+}
+
+a[href="/"].nav-link:hover i {
+    transform: translateX(5px);
+    animation: none;
+}
+
+a[href="/"].nav-link.active {
+    background: transparent !important;
+    box-shadow: none;
+}
